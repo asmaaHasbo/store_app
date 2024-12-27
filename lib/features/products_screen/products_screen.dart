@@ -9,4 +9,3 @@ class ProductsScreen extends StatelessWidget {
     return const ProductsGridList();
   }
 }
-

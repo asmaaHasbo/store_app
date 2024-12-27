@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class CustomCard extends StatelessWidget {
   const CustomCard({
     super.key,
@@ -10,7 +11,7 @@ class CustomCard extends StatelessWidget {
       color: Colors.white,
       elevation: 10,
       child: Padding(
-        padding: const EdgeInsets.only(left: 10.0 , right: 5 , bottom: 5),
+        padding: const EdgeInsets.only(left: 10.0, right: 5, bottom: 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
@@ -24,8 +25,7 @@ class CustomCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text('\$56'),
-                IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.favorite)),
+                IconButton(onPressed: () {}, icon: const Icon(Icons.favorite)),
               ],
             )
           ],
