@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:store_app/models/product_model.dart';
+
 class ProductImg extends StatelessWidget {
-  const ProductImg({
-    super.key,
-  });
+  ProductImg({super.key, required this.productModel});
+
+  ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +13,9 @@ class ProductImg extends StatelessWidget {
       bottom: 70,
       right: 20,
       child: Image.network(
-        'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-        height: 90,
-
+        productModel.imageUrl!,
+        height: 80,
+        width: 90,
       ),
     );
   }

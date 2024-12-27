@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
 import 'custom_stack.dart';
 
 class ProductsGridList extends StatelessWidget {
-  const ProductsGridList({
-    super.key,
-  });
+  ProductsGridList({super.key, required this.productModelList});
+
+  List<ProductModel> productModelList;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,11 @@ class ProductsGridList extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 60,
         ),
+        itemCount: productModelList.length,
         itemBuilder: (BuildContext context, int index) {
-          return const CustomStack();
+          return CustomStack(
+            productModel: productModelList[index],
+          );
         },
       ),
     );

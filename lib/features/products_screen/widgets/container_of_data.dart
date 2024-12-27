@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'package:store_app/models/product_model.dart';
 import 'custom_card.dart';
 
 class ContainerOfProductData extends StatelessWidget {
-  const ContainerOfProductData({
-    super.key,
-  });
+  ContainerOfProductData({super.key,
+    required this.productModel});
+
+  ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,9 @@ class ContainerOfProductData extends StatelessWidget {
           ),
         ],
       ),
-      child: const CustomCard(),
+      child: CustomCard(
+        productModel: productModel,
+      ),
     );
   }
 }

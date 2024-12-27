@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({
+  CustomCard({
     super.key,
+    required this.productModel
   });
+
+  ProductModel productModel ;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +21,16 @@ class CustomCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           // mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'dress',
-              style: TextStyle(color: Colors.grey),
+            Text(
+              '${productModel.title!.substring(0, 7)}...',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.grey),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('\$56'),
+                Text('\$${productModel.price} '),
                 IconButton(onPressed: () {}, icon: const Icon(Icons.favorite)),
               ],
             )
