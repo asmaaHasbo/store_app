@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/features/home_page/widgets/home_screen.dart';
+import 'package:store_app/features/product_details/product_details_screen.dart';
 
 void main() async{
   runApp(const StoreApp());
