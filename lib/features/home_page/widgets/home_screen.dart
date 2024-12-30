@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/core/themes/styles.dart';
-import 'package:store_app/features/favourites_screen/orders_screen.dart';
+import 'package:store_app/features/favourites_screen/favourite_screen.dart';
 import 'package:store_app/features/orders_screen/orders_screen.dart';
 import 'package:store_app/features/products_screen/products_screen.dart';
 import 'package:store_app/features/profile_screen/profile_screen.dart';

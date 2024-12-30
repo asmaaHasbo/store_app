@@ -6,15 +6,14 @@ import '../../../core/shared_widgets/navigator_function.dart';
 import 'container_of_data.dart';
 
 class CustomStack extends StatelessWidget {
-  CustomStack({super.key, required this.productModel ,required this.index});
-  String index ;
+  CustomStack({super.key, required this.productModel });
   ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        navigatorFunction(context,  ProductDetailsScreen(index: index,));
+        navigatorFunction(context,  ProductDetailsScreen( productModel: productModel,));
       },
       child: Stack(
         clipBehavior: Clip.none,

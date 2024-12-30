@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/services/get_all_product.dart';
+import 'package:store_app/core/helper/get_all_product.dart';
 import 'package:store_app/core/themes/colors.dart';
 import 'package:store_app/features/products_screen/widgets/products_grid_list.dart';
 

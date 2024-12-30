@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/features/products_screen/widgets/add_to_fav_icon.dart';
 import 'package:store_app/models/product_model.dart';
 
 class CustomCard extends StatelessWidget {
-  CustomCard({
-    super.key,
-    required this.productModel
-  });
+  CustomCard({super.key, required this.productModel});
 
-  ProductModel productModel ;
+  ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,6 @@ class CustomCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
-          // mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               '${productModel.title!.substring(0, 7)}...',
@@ -30,8 +27,8 @@ class CustomCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('\$${productModel.price} '),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.favorite)),
+                Text('\$${productModel.price}'),
+                AddToFavIcon(productModel:productModel,),
               ],
             )
           ],
