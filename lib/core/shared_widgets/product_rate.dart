@@ -17,6 +17,7 @@ class ProductRate extends StatelessWidget {
         const Icon(
           Icons.star,
           color: Colors.orange,
+          size: 16,
         ),
         Text('${productModel.rating?.rating}'),
       ],

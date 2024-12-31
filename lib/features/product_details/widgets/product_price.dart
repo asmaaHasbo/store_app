@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../models/product_model.dart';
+import 'package:store_app/models/product_model.dart';
+
 class ProductPrice extends StatelessWidget {
   const ProductPrice({
     super.key,
@@ -12,10 +13,10 @@ class ProductPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '\$${productModel.price}',
+      '\$${productModel.price!}',
       style: const TextStyle(
-        fontSize: 17,
-        color: Colors.grey,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
       ),
     );
   }

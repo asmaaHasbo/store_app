@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/features/product_details/widgets/product_description.dart';
-import 'package:store_app/core/shared_widgets/product_price.dart';
+import 'package:store_app/features/product_details/widgets/product_price.dart';
 import 'package:store_app/core/shared_widgets/product_rate.dart';
 import 'package:store_app/features/product_details/widgets/product_size_options.dart';
 import 'package:store_app/features/product_details/widgets/product_title.dart';
