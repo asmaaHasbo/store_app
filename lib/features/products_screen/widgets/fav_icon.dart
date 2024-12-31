@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:store_app/core/firebase_functions/add_product_to_favourite_collection.dart';
 
 class AddToFavIcon extends StatefulWidget {
   AddToFavIcon({super.key, required this.productModel});
@@ -12,8 +12,6 @@ class AddToFavIcon extends StatefulWidget {
 
 class _AddToFavIconState extends State<AddToFavIcon> {
   bool onPressFavIcon = false;
-  CollectionReference favouriteProducts =
-      FirebaseFirestore.instance.collection('favouriteProducts');
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +19,7 @@ class _AddToFavIconState extends State<AddToFavIcon> {
       onPressed: () {
         onPressFavIcon = !onPressFavIcon;
         setState(() {});
-        favouriteProducts
-            .add({
-              "title": widget.productModel.title,
-              "img": widget.productModel.imageUrl,
-              "price": widget.productModel.price,
-              "rate": widget.productModel.rating?.rating,
-            })
-            .then((value) => print("favProduct Added"))
-            .catchError((error) => print("Failed to add favProduct: $error"));
-
+        addProductToFavCollection(productModel: widget.productModel);
       },
       icon: Icon(
         Icons.favorite,

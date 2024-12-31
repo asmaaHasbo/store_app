@@ -27,7 +27,7 @@ class ProductModel {
       description: json['description']!,
       category: json['category']!,
       imageUrl: json['image']!,
-      rating: ProductRatingModel.fromJson(json['rating']),
+      rating: ProductRatingModel.fromJson(json['rating']!),
     );
   }
 

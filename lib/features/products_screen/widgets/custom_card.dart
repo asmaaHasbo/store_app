@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/features/products_screen/widgets/add_to_fav_icon.dart';
+import 'package:store_app/features/products_screen/widgets/fav_icon.dart';
 import 'package:store_app/models/product_model.dart';
 
 class CustomCard extends StatelessWidget {

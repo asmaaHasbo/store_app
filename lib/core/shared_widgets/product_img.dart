@@ -15,6 +15,7 @@ class ProductImg extends StatelessWidget {
     return Image.network(
       productModel.imageUrl!,
       height: 200,
+      width: 100,
     );
   }
 }
