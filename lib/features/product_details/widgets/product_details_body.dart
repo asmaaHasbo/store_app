@@ -24,7 +24,7 @@ class ProductDetailsBody extends StatelessWidget {
           ProductImg(productModel: productModel),
           //--- name + rate
           Padding(
-            padding: const EdgeInsets.only(top: 15, bottom: 10.0),
+            padding: const EdgeInsets.only(top: 10, bottom: 10.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,7 +51,7 @@ class ProductDetailsBody extends StatelessWidget {
           const ProductSizeOptions(),
           //----- price + button
           Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -24,7 +24,7 @@ class CustomListTile extends StatelessWidget {
         navigatorFunction(
             context,
             ProductDetailsScreen(
-                productModel: productModel, screenName: 'Favourites'));
+                productModel: productModel));
       },
       child: Column(
         children: [

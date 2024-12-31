@@ -13,7 +13,7 @@ class CustomStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        navigatorFunction(context,  ProductDetailsScreen( productModel: productModel, screenName: '',));
+        navigatorFunction(context,  ProductDetailsScreen( productModel: productModel));
       },
       child: Stack(
         clipBehavior: Clip.none,

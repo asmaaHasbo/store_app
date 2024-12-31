@@ -16,7 +16,7 @@ class ArrowIcon extends StatelessWidget {
     return IconButton(
       onPressed: () {
         navigatorFunction(context,
-            ProductDetailsScreen(productModel: productModel, screenName: 'Favourites',));
+            ProductDetailsScreen(productModel: productModel));
       },
       icon: const Icon(
         Icons.arrow_forward_ios_rounded,
