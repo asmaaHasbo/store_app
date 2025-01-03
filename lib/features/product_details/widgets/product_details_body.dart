@@ -8,18 +8,23 @@ import 'package:store_app/models/product_model.dart';
 import 'package:store_app/core/shared_widgets/product_img.dart';
 import 'add_to_cart_button.dart';
 
-class ProductDetailsBody extends StatelessWidget {
+class ProductDetailsBody extends StatefulWidget {
   ProductDetailsBody({super.key, required this.productModel});
   ProductModel productModel;
+
+  @override
+  State<ProductDetailsBody> createState() => _ProductDetailsBodyState();
+}
+
+class _ProductDetailsBodyState extends State<ProductDetailsBody> {
+  String ? size;
   @override
   Widget build(BuildContext context) {
-    List<String> sizes = ['S', 'M', 'L', 'XL', 'XXL'];
-
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          ProductImg(productModel: productModel),
+          ProductImg(productModel: widget.productModel),
           //--- name + rate
           Padding(
             padding: const EdgeInsets.only(top: 10, bottom: 10.0),
@@ -27,12 +32,12 @@ class ProductDetailsBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ProductTitle(productModel: productModel),
-                ProductRate(productModel: productModel),
+                ProductTitle(productModel: widget.productModel),
+                ProductRate(productModel: widget.productModel),
               ],
             ),
           ),
-          ProductDescription(productModel: productModel),
+          ProductDescription(productModel: widget.productModel),
           const Padding(
             padding: EdgeInsets.only(top: 15.0),
             child: SizedBox(
@@ -44,14 +49,22 @@ class ProductDetailsBody extends StatelessWidget {
               ),
             ),
           ),
-          const ProductSizeOptions(),
+          ProductSizeOptions(
+            selectedSizeFun: (value) {
+              setState(() {
+                size = value;
+
+              });
+              print(size);
+            },
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ProductPrice(productModel: productModel),
-                addToCartButton(productModel: productModel),
+                ProductPrice(productModel: widget.productModel),
+                addToCartButton(productModel: widget.productModel, size: size),
               ],
             ),
           )

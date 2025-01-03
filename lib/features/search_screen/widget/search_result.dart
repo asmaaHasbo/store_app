@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/features/favourites_screen/widgets/custom_list_tile.dart';
+import 'package:store_app/features/search_screen/widget/search_list_view.dart';
 import 'package:store_app/models/product_model.dart';
-import 'package:store_app/features/favourites_screen/widgets/list_tile_of_products.dart';
 
 import '../../../core/helper/get_all_product.dart';
 import '../../../core/themes/colors.dart';
@@ -17,7 +18,7 @@ class SearchResult extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (searchValue.isEmpty) {
-              return ListTileOfProducts(productModelList: snapshot.data!);
+              return SearchListView(productModelList: snapshot.data!);
             } else {
               List<ProductModel> productModelList = [];
 
@@ -35,7 +36,7 @@ class SearchResult extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 18, color: AppColors.mainColor)));
               } else {
-                return ListTileOfProducts(productModelList: productModelList);
+                return SearchListView(productModelList: productModelList);
               }
             }
           } else {

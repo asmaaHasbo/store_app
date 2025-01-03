@@ -2,10 +2,11 @@ import "package:flutter/material.dart";
 import "package:store_app/models/product_model.dart";
 import 'package:store_app/features/product_details/logic/add_product_to_order_coll.dart';
 
-ElevatedButton addToCartButton({required ProductModel productModel}) {
+ElevatedButton addToCartButton({required ProductModel productModel ,required size}) {
   return ElevatedButton(
     onPressed: () {
-      addProductToOrderColl(productModel);
+      addProductToOrderColl( productModel: productModel, size: size);
+      print( 'db' +  size);
     },
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.orange,

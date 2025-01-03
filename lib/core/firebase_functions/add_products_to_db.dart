@@ -1,9 +1,11 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:store_app/models/product_model.dart';
 
 void addProductToDB({
   required ProductModel productModel,
   required CollectionReference collectionName,
+    size
 }) {
   collectionName
       .add({
@@ -17,6 +19,7 @@ void addProductToDB({
           "rate": productModel.rating!.rating,
           "count": productModel.rating!.count,
         },
+    "size" : size ,
       })
       .then((value) => print("product Added"))
       .catchError((error) => print("Failed to add product: $error"));

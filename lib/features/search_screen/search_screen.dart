@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/core/shared_widgets/app_bar.dart';
 import 'package:store_app/features/search_screen/widget/search_body.dart';
-
-import '../../core/themes/styles.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -9,14 +8,8 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Center(
-            child: Text(
-              'Find Products',
-              style: Styles.textStyle45,
-            ),
-          ),
-        ),
-        body: SearchBody());
+      appBar: customAppBar(title: 'Find Products'),
+      body: const SearchBody(),
+    );
   }
 }

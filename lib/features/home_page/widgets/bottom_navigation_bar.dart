@@ -22,11 +22,11 @@ class CustomBottomNavigation extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           label: '',
-          icon: Icon(Icons.shopping_cart_sharp),
+          icon: Icon(Icons.favorite),
         ),
         BottomNavigationBarItem(
           label: '',
-          icon: Icon(Icons.favorite),
+          icon: Icon(Icons.shopping_cart_sharp),
         ),
         BottomNavigationBarItem(
           label: '',

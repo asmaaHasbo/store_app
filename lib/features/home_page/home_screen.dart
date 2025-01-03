@@ -4,7 +4,7 @@ import 'package:store_app/features/products_screen/all_products_screen.dart';
 import 'package:store_app/features/profile_screen/profile_screen.dart';
 import 'package:store_app/features/search_screen/search_screen.dart';
 import 'package:store_app/features/favourites_screen/favourite_screen.dart';
-import 'bottom_navigation_bar.dart';
+import 'widgets/bottom_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,8 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> screens = [
     const AllProductsScreen(),
     const SearchScreen(),
-    const OrdersScreen(),
     FavouritesScreen(),
+    OrdersScreen(),
     const ProfileScreen(),
   ];
 

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
-import 'package:store_app/core/firebase_functions/add_product_to_db.dart';
+import 'package:store_app/core/firebase_functions/add_products_to_db.dart';
 
 class AddToFavIcon extends StatefulWidget {
   AddToFavIcon({super.key, required this.productModel});
