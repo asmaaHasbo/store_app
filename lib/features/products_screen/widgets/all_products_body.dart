@@ -17,7 +17,11 @@ class AllProductsBody extends StatelessWidget {
           return ProductsGridList(
             productModelList: snapshot.data!,
           );
-        } else {
+        }
+        else if(snapshot.hasError){
+        return Text(snapshot.error.toString());
+        }
+        else {
           return const Center(
               child: CircularProgressIndicator(
             color: AppColors.mainColor,

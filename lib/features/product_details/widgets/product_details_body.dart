@@ -15,9 +15,7 @@ class ProductDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     List<String> sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
-    return
-
-      Padding(
+    return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
@@ -34,9 +32,7 @@ class ProductDetailsBody extends StatelessWidget {
               ],
             ),
           ),
-          //---- description ---
           ProductDescription(productModel: productModel),
-          //--- size options----
           const Padding(
             padding: EdgeInsets.only(top: 15.0),
             child: SizedBox(
@@ -49,14 +45,13 @@ class ProductDetailsBody extends StatelessWidget {
             ),
           ),
           const ProductSizeOptions(),
-          //----- price + button
           Padding(
             padding: const EdgeInsets.only(top: 15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ProductPrice(productModel: productModel),
-                addToCartButton(),
+                addToCartButton(productModel: productModel),
               ],
             ),
           )

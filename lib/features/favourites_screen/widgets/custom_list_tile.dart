@@ -26,27 +26,43 @@ class CustomListTile extends StatelessWidget {
             ProductDetailsScreen(
                 productModel: productModel));
       },
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: ListTile(
-                  leading: ProductImg(productModel: productModel),
-                  title: ProductTitle(productModel: productModel),
-                  subtitle: ProductPrice(productModel: productModel),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10 ,horizontal: 10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 1,
+              blurRadius: 10,
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+
+        // margin: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: ListTile(
+                    leading: ProductImg(productModel: productModel),
+                    title: ProductTitle(productModel: productModel),
+                    subtitle: ProductPrice(productModel: productModel),
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  ProductRate(productModel: productModel),
-                  ArrowIcon(productModel: productModel)
-                ],
-              ),
-            ],
-          ),
-          const CustomDivider(),
-        ],
+                Row(
+                  children: [
+                    ProductRate(productModel: productModel),
+                    ArrowIcon(productModel: productModel)
+                  ],
+                ),
+              ],
+            ),
+            // const CustomDivider(),
+          ],
+        ),
       ),
     );
   }

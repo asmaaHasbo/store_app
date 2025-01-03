@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:store_app/core/firebase_functions/stream_bulider_for_get_prodects.dart';
+import 'package:store_app/core/firebase_functions/get_prodects_from_db.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/core/themes/styles.dart';
 
@@ -23,7 +23,7 @@ class FavouritesScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: StreamBuilderForGetProducts(collectionName: favouriteProducts),
+      body: GetProductsFromDB(collectionName: favouriteProducts),
     );
   }
 }

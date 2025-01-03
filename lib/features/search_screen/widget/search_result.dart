@@ -31,7 +31,9 @@ class SearchResult extends StatelessWidget {
               }
               if (productModelList.isEmpty) {
                 return const Center(
-                    child: Text('Not Found', style: TextStyle(fontSize: 18)));
+                    child: Text('Not Found',
+                        style: TextStyle(
+                            fontSize: 18, color: AppColors.mainColor)));
               } else {
                 return ListTileOfProducts(productModelList: productModelList);
               }
