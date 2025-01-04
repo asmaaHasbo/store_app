@@ -53,7 +53,6 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
             selectedSizeFun: (value) {
               setState(() {
                 size = value;
-
               });
               print(size);
             },

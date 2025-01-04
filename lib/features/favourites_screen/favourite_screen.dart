@@ -13,7 +13,7 @@ class FavouritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(title: 'Favourites'),
-      body: GetProductsFromDB(collectionName: favouriteProducts, screenName: 'favourites',),
+      body: GetProductsFromDB(collectionName: favouriteProducts, screenName: 'favourites', receiveTotalPrice: (double ) {  },),
     );
   }
 }

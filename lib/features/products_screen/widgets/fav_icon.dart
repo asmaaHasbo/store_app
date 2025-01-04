@@ -43,7 +43,7 @@ class _AddToFavIconState extends State<AddToFavIcon> {
 
         addProductToDB(
             productModel: widget.productModel,
-            collectionName: favouriteProducts);
+            collectionName: favouriteProducts, size: '');
       },
       icon: Icon(
         Icons.favorite,

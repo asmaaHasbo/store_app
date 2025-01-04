@@ -8,13 +8,13 @@ import '../../../core/shared_widgets/product_title.dart';
 import '../../../models/product_model.dart';
 
 class OrderProductUi extends StatelessWidget {
-  const OrderProductUi({
+ OrderProductUi({
     super.key,
     required this.productModel,
+    required this.size,
   });
-
-  final ProductModel productModel;
-
+String size ;
+final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,12 +34,11 @@ class OrderProductUi extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProductTitle(productModel: productModel),
-                const Text(
-                  'Size : M ',
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                  Text(
+                  'Size : $size ',
+                  style: const TextStyle(color: Colors.grey, fontSize: 16),
                 ),
                 Row(
-                  mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(

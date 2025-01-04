@@ -14,12 +14,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex = 3;
+  int currentIndex = 2;
   List<Widget> screens = [
     const AllProductsScreen(),
     const SearchScreen(),
     FavouritesScreen(),
-    OrdersScreen(),
+    const OrdersScreen(),
     const ProfileScreen(),
   ];
 

@@ -7,6 +7,7 @@ class ProductModel {
   final String ?description;
   final String ?category;
   final String ?imageUrl;
+  // String size = 'XL';
   final ProductRatingModel ?rating ;
 
   ProductModel({
@@ -16,6 +17,7 @@ class ProductModel {
     required this.description,
     required this.category,
     required this.imageUrl,
+   // size,
     required this.rating,
   });
 

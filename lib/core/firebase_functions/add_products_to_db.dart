@@ -5,7 +5,7 @@ import 'package:store_app/models/product_model.dart';
 void addProductToDB({
   required ProductModel productModel,
   required CollectionReference collectionName,
-    size
+  required  size
 }) {
   collectionName
       .add({

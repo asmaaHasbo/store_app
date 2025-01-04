@@ -9,38 +9,36 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-
-  int counter = 1 ;
+  int counter = 1;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.min,
       children: [
-        IconButton(onPressed: (){
-          counter--;
-          setState(() {
-
-          });
-        },
-            icon: const Icon(Icons.remove_circle)
-        ),
-
+        IconButton(
+            onPressed: () {
+              if (counter >= 2) {
+                counter--;
+              }
+              setState(() {});
+            },
+            icon: const Icon(Icons.remove_circle)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5.0),
-          child: Text('$counter' ,style: const TextStyle(fontSize: 19),
+          child: Text(
+            '$counter',
+            style: const TextStyle(fontSize: 19),
           ),
         ),
-
-        IconButton(onPressed: (){
-          counter++;
-          setState(() {
-
-          });
-        },
-            icon:  const Icon(Icons.add_circle_outlined , color: AppColors.mainColor,)
-        ),
-
+        IconButton(
+            onPressed: () {
+              counter++;
+              setState(() {});
+            },
+            icon: const Icon(
+              Icons.add_circle_outlined,
+              color: AppColors.mainColor,
+            )),
       ],
     );
   }
