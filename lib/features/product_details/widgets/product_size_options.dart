@@ -10,6 +10,7 @@ class ProductSizeOptions extends StatefulWidget {
 class _ProductSizeOptionsState extends State<ProductSizeOptions> {
   @override
   String selectedSize = 'M';
+  @override
   Widget build(BuildContext context) {
     return Row(
       children: [

@@ -11,23 +11,48 @@ class AllProductsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: GetAllProductService().getAllProduct(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return ProductsGridList(
-            productModelList: snapshot.data!,
-          );
+        future: GetAllProductService().getAllProduct(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+                child: CircularProgressIndicator(
+              color: AppColors.mainColor,
+            ));
+          } else if (snapshot.hasError) {
+            return Center(
+              child: Text(
+                'Error: ${snapshot.error}',
+                style: const TextStyle(color: Colors.red),
+              ),
+            );
+          } else if (snapshot.hasData) {
+            return ProductsGridList(
+              productModelList: snapshot.data!,
+            );
+          } else {
+            return const Center(
+              child: Text('No data found'),
+            );
+          }
         }
-        else if(snapshot.hasError){
-        return Text(snapshot.error.toString());
-        }
-        else {
-          return const Center(
-              child: CircularProgressIndicator(
-            color: AppColors.mainColor,
-          ));
-        }
-      },
-    );
+
+        // builder: (context, snapshot) {
+        //   if (snapshot.hasData) {
+        //     return ProductsGridList(
+        //       productModelList: snapshot.data!,
+        //     );
+        //   }
+        //   else if(snapshot.hasError){
+        //     throw Exception(snapshot.error.toString());
+        //   // return Text('kkk' + snapshot.error.toString());
+        //   }
+        //   else {
+        //     return const Center(
+        //         child: CircularProgressIndicator(
+        //       color: AppColors.mainColor,
+        //     ));
+        //   }
+        // },
+        );
   }
 }

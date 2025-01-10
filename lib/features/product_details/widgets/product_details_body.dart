@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/features/product_details/widgets/product_description.dart';
 import 'package:store_app/features/product_details/widgets/product_price.dart';
-import 'package:store_app/core/shared_widgets/product_rate.dart';
 import 'package:store_app/features/product_details/widgets/product_size_options.dart';
-import 'package:store_app/features/product_details/widgets/product_title.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/core/shared_widgets/product_img.dart';
 import 'add_to_cart_button.dart';
+import 'build_title_and_rate.dart';
 
 class ProductDetailsBody extends StatefulWidget {
-  ProductDetailsBody({super.key, required this.productModel});
-  ProductModel productModel;
+ final ProductModel productModel;
+ const ProductDetailsBody({super.key, required this.productModel});
 
   @override
   State<ProductDetailsBody> createState() => _ProductDetailsBodyState();
@@ -25,18 +24,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
       child: Column(
         children: [
           ProductImg(productModel: widget.productModel),
-          //--- name + rate
-          Padding(
-            padding: const EdgeInsets.only(top: 10, bottom: 10.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ProductTitle(productModel: widget.productModel),
-                ProductRate(productModel: widget.productModel),
-              ],
-            ),
-          ),
+          buildTitleAndRate(productModel: widget.productModel),
           ProductDescription(productModel: widget.productModel),
           const Padding(
             padding: EdgeInsets.only(top: 15.0),

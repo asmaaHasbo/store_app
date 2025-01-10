@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:store_app/core/themes/colors.dart';
 
 class Counter extends StatefulWidget {
-  const Counter({Key? key}) : super(key: key);
+  const Counter({super.key});
 
   @override
   State<Counter> createState() => _CounterState();
@@ -24,7 +24,7 @@ class _CounterState extends State<Counter> {
             },
             icon: const Icon(Icons.remove_circle)),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Text(
             '$counter',
             style: const TextStyle(fontSize: 19),

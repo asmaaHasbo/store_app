@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:store_app/features/home_page/home_screen.dart';
 import 'package:store_app/features/splash_screen/splash_screen.dart';
 
 void main() async {
@@ -17,7 +16,7 @@ void main() async {
             appId: "1:734299336679:web:dd35ec4f13c5ad657b9742",
             measurementId: "G-5YN15236Y4"));
   } else {
-    Firebase.initializeApp();
+   await Firebase.initializeApp();
   }
 
   runApp(const StoreApp());
@@ -30,12 +29,7 @@ class StoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      // routes: {
-      //   HomePage.id : (context) => const HomePage(),
-      //   SplashScreen.id : (context) => const SplashScreen(),
-      // },
-      // initialRoute: HomePage.id,
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

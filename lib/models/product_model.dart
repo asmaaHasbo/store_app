@@ -1,14 +1,14 @@
 import 'package:store_app/models/product_rating_model.dart';
 
 class ProductModel {
-  final int ? id;
-  final String ?title;
-  final double ?price;
-  final String ?description;
-  final String ?category;
-  final String ?imageUrl;
+  final int? id;
+  final String? title;
+  final double? price;
+  final String? description;
+  final String? category;
+  final String? imageUrl;
   // String size = 'XL';
-  final ProductRatingModel ?rating ;
+  final ProductRatingModel? rating;
 
   ProductModel({
     required this.id,
@@ -17,7 +17,6 @@ class ProductModel {
     required this.description,
     required this.category,
     required this.imageUrl,
-   // size,
     required this.rating,
   });
 
@@ -25,12 +24,13 @@ class ProductModel {
     return ProductModel(
       id: json['id']!,
       title: json['title']!,
-      price: json['price']!,
+      price: (json['price'] != null) ? (json['price'] as num).toDouble() : 0.0,
       description: json['description']!,
       category: json['category']!,
       imageUrl: json['image']!,
-      rating: ProductRatingModel.fromJson(json['rating']!),
+      rating: json['rating'] != null
+          ? ProductRatingModel.fromJson(json['rating'])
+          : null,
     );
   }
-
 }

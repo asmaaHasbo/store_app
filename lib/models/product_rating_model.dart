@@ -8,6 +8,8 @@ class ProductRatingModel {
   });
 
   factory ProductRatingModel.fromJson(json){
-    return ProductRatingModel(rating: json['rate'], count: json['count']);
+    return ProductRatingModel(
+        rating: (json['rate'] as num).toDouble(),
+        count: json['count'] as int,);
   }
 }

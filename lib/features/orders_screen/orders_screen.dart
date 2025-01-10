@@ -9,7 +9,7 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: customAppBar(title: 'Orders'),
-        body: OrderBody()
+        body: const OrderBody()
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/features/favourites_screen/widgets/custom_list_tile.dart';
 import 'package:store_app/features/search_screen/widget/search_list_view.dart';
 import 'package:store_app/models/product_model.dart';
 

@@ -10,7 +10,10 @@ import 'package:store_app/features/product_details/product_details_screen.dart';
 import 'arrow_icon.dart';
 
 class CustomListTile extends StatelessWidget {
-  const CustomListTile({super.key, required this.productModel});
+  const CustomListTile({
+    super.key,
+    required this.productModel,
+  });
 
   final ProductModel productModel;
 
@@ -34,7 +37,9 @@ class CustomListTile extends StatelessWidget {
                     leading: ProductImg(productModel: productModel),
                     title: ProductTitle(productModel: productModel),
                     subtitle: Padding(
-                      padding: const EdgeInsets.only(top: 20.0 , ),
+                      padding: const EdgeInsets.only(
+                        top: 20.0,
+                      ),
                       child: ProductPrice(productModel: productModel),
                     ),
                   ),

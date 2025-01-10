@@ -11,7 +11,7 @@ CustomElevatedButton addToCartButton({
     onPress: () {
       addProductToOrderColl(
         productModel: productModel,
-        size: size,
+        size: size??'M',
       );
     },
     buttonName: 'Add To Cart',

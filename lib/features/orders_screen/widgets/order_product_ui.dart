@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/features/orders_screen/widgets/counter.dart';
-import 'package:store_app/features/product_details/widgets/product_price.dart';
 
 import '../../../core/shared_widgets/box_decoration_shadow.dart';
 import '../../../core/shared_widgets/product_img.dart';
@@ -8,13 +7,14 @@ import '../../../core/shared_widgets/product_title.dart';
 import '../../../models/product_model.dart';
 
 class OrderProductUi extends StatelessWidget {
- OrderProductUi({
+  OrderProductUi({
     super.key,
     required this.productModel,
     required this.size,
   });
-String size ;
-final ProductModel productModel;
+
+  String size;
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,30 +22,32 @@ final ProductModel productModel;
       height: 150,
       decoration: boxDecorationShadow(),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ProductImg(productModel: productModel)),
+            padding: const EdgeInsets.all(8.0),
+            child: ProductImg(productModel: productModel),
+          ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 13),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProductTitle(productModel: productModel),
-                  Text(
+                Text(
                   'Size : $size ',
                   style: const TextStyle(color: Colors.grey, fontSize: 16),
                 ),
                 Row(
+                  mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       '\$${productModel.price}',
                       style: const TextStyle(fontSize: 18),
                     ),
-                    const SizedBox(width: 30),
+                    const SizedBox(width: 17),
                     const Counter(),
                   ],
                 )

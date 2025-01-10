@@ -28,10 +28,7 @@ class CustomBottomNavigation extends StatelessWidget {
           label: '',
           icon: Icon(Icons.shopping_cart_sharp),
         ),
-        BottomNavigationBarItem(
-          label: '',
-          icon: Icon(Icons.person),
-        ),
+
       ],
       currentIndex: currentIndex,
       unselectedItemColor: Colors.grey,
